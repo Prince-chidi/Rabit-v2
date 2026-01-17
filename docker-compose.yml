@@ -1,0 +1,10 @@
+services:
+  scraper-app:
+    build: .
+    container_name: scraper_container
+    restart: always
+    ports:
+      - "3500:3500"  # External Port : Internal App Port
+    environment:
+      - PORT=3500
+      - PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable # Optional: Forces Puppeteer to use the installed Chrome
