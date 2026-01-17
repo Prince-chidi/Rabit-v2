@@ -27,7 +27,7 @@ puppeteerExtra.use(StealthPlugin());
 const log = (...args) => console.log(new Date().toISOString(), ...args);
 
 app.get("/health", (req, res) => {
-  res.json({ status: "ok", timestamp: new Date().toISOString() });
+  res.json({ status: "ok", server: "Rabit, a product of Edmondie.com",  timestamp: new Date().toISOString() });
 });
 
 app.post("/scrape", async (req, res) => {
@@ -277,4 +277,5 @@ app.post("/scrape", async (req, res) => {
     res.end();
   }
 });
+
 app.listen(PORT, () => log(`Server listening on port ${PORT}`));
